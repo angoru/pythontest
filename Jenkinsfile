@@ -1,11 +1,13 @@
 pipeline {
     agent {
-        docker { image 'python:3.10' }
+        dockerfile {
+            filename 'Dockerfile'
+        }
     }
     stages {
         stage('Install') {
             steps {
-                sh 'pip install -r requirements.txt --user'
+                sh 'pip install -r requirements.txt'
             }
         }
     }
