@@ -8,6 +8,7 @@ pipeline {
         stage('Install') {
             steps {
                 sh 'ls -lah'
+                sh 'whoami'
             }
         }
     }
