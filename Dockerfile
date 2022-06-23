@@ -1,6 +1,6 @@
 FROM python:3.10
 
-RUN useradd -m api -s /bin/bash
+RUN useradd -m api -s /bin/bash && mkdir /app && chown api:api /app
 
 WORKDIR /app
 COPY --chown=api requirements.txt requirements.txt
