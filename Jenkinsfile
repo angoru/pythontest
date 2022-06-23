@@ -7,8 +7,8 @@ pipeline {
     stages {
         stage('Run') {
             steps {
-                sh 'export FLASK_APP=hello'
-                sh 'flask run'
+                sh 'docker image build -t flask_docker .'
+                sh 'docker run -p 5000:5000 -d flask_docker'
             }
         }
     }
