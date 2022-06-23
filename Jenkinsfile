@@ -7,8 +7,7 @@ pipeline {
     stages {
         stage('Install') {
             steps {
-                sh 'ls -lah'
-                sh 'whoami'
+                sh 'virtualenv venv && . venv/bin/activate && pip install -r requirements.txt'
             }
         }
     }
