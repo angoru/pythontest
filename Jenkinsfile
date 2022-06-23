@@ -5,9 +5,10 @@ pipeline {
         }
     }
     stages {
-        stage('Install') {
+        stage('Run') {
             steps {
-                sh 'echo hola'
+                sh 'export FLASK_APP=hello'
+                sh 'flask run'
             }
         }
     }
